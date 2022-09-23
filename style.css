@@ -1,1 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+}
+
+.background-side img {
+    width: 400px;
+}
