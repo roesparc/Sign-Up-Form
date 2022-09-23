@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Expletus+Sans&display=swap');
+
+:root {
+    --background-text-color: #ffffff;
+}
 
 * {
     margin: 0;
@@ -7,8 +11,56 @@
 
 body {
     display: flex;
+    font-family: 'Expletus Sans', sans-serif;
 }
 
-.background-side img {
-    width: 400px;
+.background-side {
+    position: relative;
+}
+
+.background-side > img {
+    display: block;
+    width: 40vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+address {
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 130px);
+
+    font-style: normal;
+    color: var(--background-text-color);
+    text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+}
+
+address a {
+    color: var(--background-text-color);
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    padding: 10px 0;
+
+    font-family: 'Edu QLD Beginner', sans-serif;
+    color: var(--background-text-color);
+    font-size: 2.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logo-container img {
+    width: 120px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(26deg) brightness(110%) contrast(101%);
+}
+
+.logo-container h1 {
+    padding: 0 10px;
 }
