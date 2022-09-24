@@ -2,6 +2,11 @@
 
 :root {
     --background-text-color: #ffffff;
+    --form-side-padding: 20px 40px;
+    --default-font: 'Expletus Sans', sans-serif;
+    --standard-font-size: 1.2rem;
+    --main-color: #596D48;
+    --main-box-shadow: 0 2px 5px #E5E7EB;
 }
 
 * {
@@ -11,7 +16,8 @@
 
 body {
     display: flex;
-    font-family: 'Expletus Sans', sans-serif;
+    font-family: var(--default-font);
+    background-color: rgb(247, 247, 247);
 }
 
 .background-side {
@@ -21,7 +27,7 @@ body {
 .background-side > img {
     display: block;
     width: 40vw;
-    height: 100vh;
+    height: max(100vh, 100%);
     object-fit: cover;
 }
 
@@ -63,4 +69,100 @@ address a {
 
 .logo-container h1 {
     padding: 0 10px;
+}
+
+.form-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-side p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: var(--form-side-padding);
+}
+
+.form-side p:last-child {
+    font-size: var(--standard-font-size);
+
+    padding: var(--form-side-padding);
+    margin-top: 20px;
+}
+
+.form-side p:last-child a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+form > div:first-child {
+
+    background-color: #ffffff;
+    box-shadow: var(--main-box-shadow);
+
+    padding: var(--form-side-padding);
+    margin: 40px 0;
+}
+
+form h2 {
+    margin-bottom: 20px;
+}
+
+form button {
+    font-family: var(--default-font);
+    font-size: var(--standard-font-size);
+    font-weight: bold;
+    color: white;
+
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--main-box-shadow);
+    
+    margin-left: 40px;
+    padding: 15px 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+form button:hover {
+    background-color: #596d48e8;
+    box-shadow: 3px 6px 5px #E5E7EB;
+}
+form button:active {
+    background-color: #4e613e;
+    box-shadow: var(--main-box-shadow);
+}
+
+label {
+    display: block;
+
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+
+input {
+    font-family: var(--default-font);
+    font-size: var(--standard-font-size);
+
+    padding: 5px 10px;
+    border: 2px solid #E5E7EB;
+    border-radius: 5px;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+input:focus {
+    outline: none;
+    box-shadow: var(--main-box-shadow);
+    border: 2px solid rgba(0, 110, 255, 0.377);
+}
+input::placeholder {
+    color: #d3d3d3;
+}
+
+.input-zone {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 80px;
 }
