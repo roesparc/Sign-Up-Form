@@ -1,45 +1,69 @@
 const password = document.querySelector('#password');
 const confirmPassword = document.querySelector('#confirm-password');
+const firstName = document.querySelector('#first-name');
+const lastName = document.querySelector('#last-name');
+const email = document.querySelector('#email');
+const submitBtn = document.querySelector('button');
+const spanPassword = document.querySelector('.dont-match');
 
 password.addEventListener('change', () => {
     if (confirmPassword.value === '') {
-        if (password.classList.value === 'error error:focus'
-        || password.classList.value === 'error:focus error') {
+        if (password.classList.value === 'error') {
             password.classList.remove('error');
-            password.classList.remove('error:focus');
             password.setCustomValidity('');
             confirmPassword.classList.remove('error');
-            confirmPassword.classList.remove('error:focus');
             return;
         } else return;
     }
     if (password.value !== confirmPassword.value) {
         password.classList.add('error');
-        password.classList.add('error:focus');
         password.setCustomValidity('Passwords do not match');
         confirmPassword.classList.add('error');
-        confirmPassword.classList.add('error:focus');
     } else {
         password.classList.remove('error');
-        password.classList.remove('error:focus');
         password.setCustomValidity('');
         confirmPassword.classList.remove('error');
-        confirmPassword.classList.remove('error:focus');
     }
 });
 
 confirmPassword.addEventListener('change', () => {
     if (password.value !== confirmPassword.value) {
         password.classList.add('error');
-        password.classList.add('error:focus');
         password.setCustomValidity('Passwords do not match');
         confirmPassword.classList.add('error');
-        confirmPassword.classList.add('error:focus');
     } else {
         password.classList.remove('error');
-        password.classList.remove('error:focus');
         password.setCustomValidity('');
         confirmPassword.classList.remove('error');
-        confirmPassword.classList.remove('error:focus');
+    }
+});
+
+firstName.addEventListener('focusout', () => {
+    if (firstName.value === '') {
+        firstName.classList.add('error');
+        firstName.setCustomValidity('What\'s your name')
+    } else {
+        firstName.classList.remove('error');
+        firstName.setCustomValidity('')
+    }
+});
+
+lastName.addEventListener('focusout', () => {
+    if (lastName.value === '') {
+        lastName.classList.add('error');
+        lastName.setCustomValidity('What\'s your name')
+    } else {
+        lastName.classList.remove('error');
+        lastName.setCustomValidity('')
+    }
+});
+
+email.addEventListener('focusout', () => {
+    if (email.value === '') {
+        email.classList.add('error');
+        email.setCustomValidity('You\'ll use this to log in')
+    } else {
+        email.classList.remove('error');
+        email.setCustomValidity('')
     }
 });
