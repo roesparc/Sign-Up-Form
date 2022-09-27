@@ -172,15 +172,20 @@ input::placeholder {
 .error {
     border: var(--error-border);
 }
+.error:focus {
+    border: var(--error-border);
+    box-shadow: 0 2px 5px #E5E7EB, 0 2px 5px #E5E7EB,
+    0 2px 5px #E5E7EB, 0 2px 5px #E5E7EB;
+}
 
 span {
 position: relative;
 }
 
-.dont-match::after {
+.invalid-password::after {
     font-size: var(--small-font-size);
     position: absolute;
-    content: "Passwords do not match";
+    content: attr(invalid-text);
     color: white;
     background-color: rgba(255, 0, 0, 0.377);
     padding: 5px 10px;
@@ -191,7 +196,7 @@ position: relative;
     filter: opacity(0);
     transition: all 0.3s ease;
 }
-input:invalid + .dont-match::after {
+input:invalid + .invalid-password::after {
     filter: opacity(1);
     top: -35px;
 }
