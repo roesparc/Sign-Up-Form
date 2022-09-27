@@ -88,3 +88,27 @@ confirmPassword.addEventListener('focusout', () => {
         confirmPassword.setCustomValidity('Confirm your password');
     }
 });
+
+submitBtn.addEventListener('click', () => {
+    if (firstName.value === '') {
+        firstName.classList.add('error');
+        firstName.setCustomValidity('What\'s your name');
+    }
+    if (lastName.value === '') {
+        lastName.classList.add('error');
+        lastName.setCustomValidity('What\'s your name');
+    }
+    if (email.value === '') {
+        email.classList.add('error');
+        email.setCustomValidity('You\'ll use this to log in');
+    }
+    if (password.value === '') {
+        password.classList.add('error');
+        password.setCustomValidity('Create a password');
+        spanPassword.setAttribute('invalid-text', 'Create a password');
+    }
+    if (confirmPassword.value === '') {
+            confirmPassword.classList.add('error');
+            confirmPassword.setCustomValidity('Confirm your password');
+    }
+});
