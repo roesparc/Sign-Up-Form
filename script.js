@@ -5,6 +5,7 @@ const lastName = document.querySelector('#last-name');
 const email = document.querySelector('#email');
 const submitBtn = document.querySelector('button');
 const spanPassword = document.querySelector('.invalid-password');
+const spanEmail = document.querySelector('.email-required');
 const letter = document.querySelector('#letter');
 const upper = document.querySelector('#upper');
 const number = document.querySelector('#number');
@@ -22,7 +23,7 @@ password.addEventListener('change', () => {
     if (password.value !== confirmPassword.value) {
         password.classList.add('error');
         password.setCustomValidity('Passwords do not match');
-        spanPassword.setAttribute('invalid-text', 'Passwords do not match');
+        spanPassword.setAttribute('invalid-password', 'Passwords do not match');
         confirmPassword.classList.add('error');
     } else {
         password.classList.remove('error');
@@ -35,12 +36,12 @@ confirmPassword.addEventListener('change', () => {
     if (password.value !== confirmPassword.value) {
         password.classList.add('error');
         password.setCustomValidity('Passwords do not match');
-        spanPassword.setAttribute('invalid-text', 'Passwords do not match');
+        spanPassword.setAttribute('invalid-password', 'Passwords do not match');
         confirmPassword.classList.add('error');
     } else if (password.value === '') {
         password.classList.add('error');
         password.setCustomValidity('Create a password');
-        spanPassword.setAttribute('invalid-text', 'Create a password');
+        spanPassword.setAttribute('invalid-password', 'Create a password');
     } else {
         password.classList.remove('error');
         password.setCustomValidity('');
@@ -72,6 +73,10 @@ email.addEventListener('focusout', () => {
     if (email.value === '') {
         email.classList.add('error');
         email.setCustomValidity('You\'ll use this to log in');
+        spanEmail.setAttribute('invalid-email', 'You\'ll use this to log in');
+    } else if (!email.value.match(/[a-zA-Z0-9]+@[a-zA-Z0-9]+/)) {
+        email.classList.add('error');
+        spanEmail.setAttribute('invalid-email', 'Please enter a valid email');
     } else {
         email.classList.remove('error');
         email.setCustomValidity('');
@@ -82,7 +87,13 @@ password.addEventListener('focusout', () => {
     if (password.value === '') {
         password.classList.add('error');
         password.setCustomValidity('Create a password');
-        spanPassword.setAttribute('invalid-text', 'Create a password');
+        spanPassword.setAttribute('invalid-password', 'Create a password');
+    } else if (!password.value.match(/[a-z]/g)
+    || !password.value.match(/[A-Z]/g)
+    || !password.value.match(/[0-9]/g)
+    || password.value.length < 8) {
+        password.classList.add('error');
+        spanPassword.setAttribute('invalid-password', 'Invalid password format');
     }
 });
 
@@ -109,7 +120,7 @@ submitBtn.addEventListener('click', () => {
     if (password.value === '') {
         password.classList.add('error');
         password.setCustomValidity('Create a password');
-        spanPassword.setAttribute('invalid-text', 'Create a password');
+        spanPassword.setAttribute('invalid-password', 'Create a password');
     }
     if (confirmPassword.value === '') {
             confirmPassword.classList.add('error');
@@ -118,8 +129,7 @@ submitBtn.addEventListener('click', () => {
 });
 
 password.addEventListener('input', () => {
-    const lowerCase = /[a-z]/g;
-    if(password.value.match(lowerCase)) {
+    if(password.value.match(/[a-z]/g)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
     } else {
@@ -127,8 +137,7 @@ password.addEventListener('input', () => {
         letter.classList.add("invalid");
     }
 
-    const upperCase = /[A-Z]/g;
-    if(password.value.match(upperCase)) {
+    if(password.value.match(/[A-Z]/g)) {
         upper.classList.remove("invalid");
         upper.classList.add("valid");
     } else {
@@ -136,8 +145,7 @@ password.addEventListener('input', () => {
         upper.classList.add("invalid");
     }
 
-    const numbers = /[0-9]/g;
-    if(password.value.match(numbers)) {
+    if(password.value.match(/[0-9]/g)) {
         number.classList.remove("invalid");
         number.classList.add("valid");
     } else {
