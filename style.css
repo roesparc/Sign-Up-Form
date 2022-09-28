@@ -39,7 +39,7 @@ body {
 
 address {
     position: absolute;
-    bottom: 15px;
+    bottom: 50px;
     left: calc(50% - 130px);
 
     font-style: normal;
@@ -47,9 +47,22 @@ address {
     text-shadow: 0 0 5px #000000, 0 0 5px #000000,
     0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
 }
-
 address a {
     color: var(--background-text-color);
+}
+
+.author {
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 37px);
+
+    color: #c7a725;
+    text-shadow: 0 0 5px #000000, 0 0 5px #000000,
+    0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
+}
+.author a {
+    color: #91b68e;
+    font-weight: bold;
 }
 
 .logo-container {
