@@ -85,14 +85,14 @@ address a {
     padding: var(--form-side-padding);
 }
 
-.form-side p:last-child {
+.login {
     font-size: var(--standard-font-size);
 
     padding: var(--form-side-padding);
     margin-top: 20px;
 }
 
-.form-side p:last-child a {
+.login a {
     font-weight: bold;
     text-decoration: none;
     color: var(--main-color);
@@ -241,4 +241,55 @@ input:invalid + .name-required::after {
 input:invalid + .email-required::after {
     filter: opacity(1);
     top: -35px;
+}
+
+.password-div {
+    position: relative;
+}
+
+.password-validation {
+    font-size: 1rem;
+    background-color: rgba(173, 210, 255, 0.925);
+    padding: 15px;
+    border-radius: 5px;
+    position: absolute;
+    top: -10px;
+    left: -105px;
+    transition: all 0.3s ease;
+    transform: scale(0);
+    filter: opacity(0);
+}
+#password:focus + span + .password-validation {
+    transform: scale(1);
+    top: 55px;
+    left: 0;
+    filter: opacity(1);
+}
+
+.password-validation h4 {
+    font-size: var(--standard-font-size);
+}
+
+.invalid {
+    color: red;
+    text-shadow: 0 0 5px white, 0 0 5px white,
+    0 0 5px white, 0 0 5px white;
+}
+  
+.invalid:before {
+    position: relative;
+    left: -5px;
+    content: "✖";
+}
+
+.valid {
+    color: green;
+    text-shadow: 0 0 5px white, 0 0 5px white,
+    0 0 5px white, 0 0 5px white;
+}
+  
+.valid:before {
+    position: relative;
+    left: -5px;
+    content: "✓";
 }
