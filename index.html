@@ -49,7 +49,11 @@
                                 for="first-name">FIRST NAME
                                 <span class="asterisk">*</span>
                             </label>
-                            <input type="text" id="first-name" placeholder="John">
+                            <input
+                            type="text"
+                            name="first-name"
+                            id="first-name"
+                            placeholder="John" />
                             <span class="name-required"></span>
                         </div>
 
@@ -58,7 +62,11 @@
                                 for="last-name">LAST NAME
                                 <span class="asterisk">*</span>
                             </label>
-                            <input type="text" id="last-name" placeholder="Smith">
+                            <input
+                            type="text"
+                            name="last-name"
+                            id="last-name"
+                            placeholder="Smith" />
                             <span class="name-required"></span>
                         </div>
 
@@ -67,7 +75,11 @@
                                 for="email">EMAIL
                                 <span class="asterisk">*</span>
                             </label>
-                            <input type="email" id="email" placeholder="email@email.com">
+                            <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="email@email.com" />
                             <span
                             invalid-email="You'll use this to log in"
                             class="email-required"></span>
@@ -75,13 +87,18 @@
 
                         <div>
                             <label for="phone-number">PHONE NUMBER</label>
-                            <input type="tel" id="phone-number" placeholder="012-345-6789">
+                            <input
+                            type="tel"
+                            name="phone-number"
+                            id="phone-number"
+                            placeholder="012-345-6789" />
                         </div>
 
                         <div class="password-div">
                             <label for="password">PASSWORD</label>
                             <input
                             type="password"
+                            name="password"
                             id="password"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                             <span
@@ -98,7 +115,10 @@
 
                         <div>
                             <label for="confirm-password">CONFIRM PASSWORD</label>
-                            <input type="password" id="confirm-password">
+                            <input
+                            type="password"
+                            name="confirm-password"
+                            id="confirm-password" />
                         </div>
 
                     </div>
