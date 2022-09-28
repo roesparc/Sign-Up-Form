@@ -5,6 +5,10 @@ const lastName = document.querySelector('#last-name');
 const email = document.querySelector('#email');
 const submitBtn = document.querySelector('button');
 const spanPassword = document.querySelector('.invalid-password');
+const letter = document.querySelector('#letter');
+const upper = document.querySelector('#upper');
+const number = document.querySelector('#number');
+const length = document.querySelector('#length');
 
 password.addEventListener('change', () => {
     if (confirmPassword.value === '') {
@@ -111,4 +115,41 @@ submitBtn.addEventListener('click', () => {
             confirmPassword.classList.add('error');
             confirmPassword.setCustomValidity('Confirm your password');
     }
+});
+
+password.addEventListener('input', () => {
+    const lowerCase = /[a-z]/g;
+    if(password.value.match(lowerCase)) {
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+    } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+    }
+
+    const upperCase = /[A-Z]/g;
+    if(password.value.match(upperCase)) {
+        upper.classList.remove("invalid");
+        upper.classList.add("valid");
+    } else {
+        upper.classList.remove("valid");
+        upper.classList.add("invalid");
+    }
+
+    const numbers = /[0-9]/g;
+    if(password.value.match(numbers)) {
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+    } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+
+    if(password.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
 });
