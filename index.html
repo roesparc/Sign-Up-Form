@@ -68,7 +68,9 @@
                                 <span class="asterisk">*</span>
                             </label>
                             <input type="email" id="email" placeholder="email@email.com">
-                            <span class="email-required"></span>
+                            <span
+                            invalid-email="You'll use this to log in"
+                            class="email-required"></span>
                         </div>
 
                         <div>
@@ -83,7 +85,7 @@
                             id="password"
                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
                             <span
-                            invalid-text="Create a password"
+                            invalid-password="Create a password"
                             class="invalid-password"></span>
                             <div class="password-validation">
                                 <h4>Password must contain:</h3>
