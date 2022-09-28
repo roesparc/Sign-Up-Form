@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Expletus+Sans&display=swap');
 
 :root {
-    --background-text-color: #ffffff;
-    --form-side-padding: 20px 40px;
     --default-font: 'Expletus Sans', sans-serif;
     --standard-font-size: 1.2rem;
-    --main-color: #596D48;
-    --main-box-shadow: 0 2px 5px #E5E7EB;
     --small-font-size: 0.7rem;
-    --error-border: 2px solid rgba(255, 0, 0, 0.377);
+    --big-font-size: 1.5rem;
+
+    --background-text-color: #ffffff;
+    --background-invalid: #ff000060;
+    --main-color: #596d48;
+    --main-box-shadow: 0 2px 5px #e5e7eb;
+    --main-border: 2px solid #e5e7eb;
+    --error-border: 2px solid #ff000060;
+    --form-side-padding: 20px 40px;
 }
 
 * {
@@ -19,7 +23,7 @@
 body {
     display: flex;
     font-family: var(--default-font);
-    background-color: rgb(247, 247, 247);
+    background-color: #f7f7f7;
 }
 
 .background-side {
@@ -40,7 +44,8 @@ address {
 
     font-style: normal;
     color: var(--background-text-color);
-    text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
+    text-shadow: 0 0 5px #000000, 0 0 5px #000000,
+    0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
 }
 
 address a {
@@ -61,7 +66,7 @@ address a {
     color: var(--background-text-color);
     font-size: 2.5rem;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #00000080;
 }
 
 .logo-container img {
@@ -80,7 +85,7 @@ address a {
 }
 
 .form-side p:first-child {
-    font-size: 1.5rem;
+    font-size: var(--big-font-size);
     font-weight: bold;
     padding: var(--form-side-padding);
 }
@@ -108,6 +113,7 @@ form > div:first-child {
 }
 
 form h2 {
+    font-size: var(--big-font-size);
     margin-bottom: 20px;
 }
 
@@ -115,7 +121,7 @@ form button {
     font-family: var(--default-font);
     font-size: var(--standard-font-size);
     font-weight: bold;
-    color: white;
+    color: #ffffff;
 
     background-color: var(--main-color);
     border: none;
@@ -129,7 +135,7 @@ form button {
 }
 form button:hover {
     background-color: #596d48e8;
-    box-shadow: 3px 6px 5px #E5E7EB;
+    box-shadow: 3px 6px 5px #e5e7eb;
 }
 form button:active {
     background-color: #4e613e;
@@ -149,7 +155,7 @@ input {
     font-size: var(--standard-font-size);
 
     padding: 5px 10px;
-    border: 2px solid #E5E7EB;
+    border: var(--main-border);
     border-radius: 5px;
     width: 300px;
     transition: all 0.3s ease;
@@ -157,7 +163,7 @@ input {
 input:focus {
     outline: none;
     box-shadow: var(--main-box-shadow);
-    border: 2px solid rgba(0, 110, 255, 0.377);
+    border: 2px solid #006eff60;
 }
 input::placeholder {
     color: #d3d3d3;
@@ -174,20 +180,20 @@ input::placeholder {
 }
 .error:focus {
     border: var(--error-border);
-    box-shadow: 0 2px 5px #E5E7EB, 0 2px 5px #E5E7EB,
-    0 2px 5px #E5E7EB, 0 2px 5px #E5E7EB;
+    box-shadow: 0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb,
+    0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb;
 }
 
 span {
-position: relative;
+    position: relative;
 }
 
 .invalid-password::after {
     font-size: var(--small-font-size);
     position: absolute;
-    content: attr(invalid-text);
-    color: white;
-    background-color: rgba(255, 0, 0, 0.377);
+    content: attr(invalid-password);
+    color: #ffffff;
+    background-color: var(--background-invalid);
     padding: 5px 10px;
     width: max-content;
     top: -30px;
@@ -196,21 +202,21 @@ position: relative;
     filter: opacity(0);
     transition: all 0.3s ease;
 }
-input:invalid + .invalid-password::after {
+input.error + .invalid-password::after {
     filter: opacity(1);
     top: -35px;
 }
 
 .asterisk {
-    color: red;
+    color: #ff0000;
 }
 
 .name-required::after {
     font-size: var(--small-font-size);
     position: absolute;
     content: "What's your name?";
-    color: white;
-    background-color: rgba(255, 0, 0, 0.377);
+    color: #ffffff;
+    background-color: var(--background-invalid);
     padding: 5px 10px;
     width: max-content;
     top: -30px;
@@ -227,9 +233,9 @@ input:invalid + .name-required::after {
 .email-required::after {
     font-size: var(--small-font-size);
     position: absolute;
-    content: "You'll use this to log in";
-    color: white;
-    background-color: rgba(255, 0, 0, 0.377);
+    content: attr(invalid-email);
+    color: #ffffff;
+    background-color: var(--background-invalid);
     padding: 5px 10px;
     width: max-content;
     top: -30px;
@@ -238,7 +244,7 @@ input:invalid + .name-required::after {
     filter: opacity(0);
     transition: all 0.3s ease;
 }
-input:invalid + .email-required::after {
+input.error + .email-required::after {
     filter: opacity(1);
     top: -35px;
 }
@@ -249,21 +255,22 @@ input:invalid + .email-required::after {
 
 .password-validation {
     font-size: 1rem;
-    background-color: rgba(173, 210, 255, 0.925);
+    background-color: #ffffffec;
+    border-left: var(--main-border);
+    border-right: var(--main-border);
+    border-bottom: var(--main-border);
     padding: 15px;
-    border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     position: absolute;
-    top: -10px;
-    left: -105px;
     transition: all 0.3s ease;
-    transform: scale(0);
     filter: opacity(0);
+    transform: scale(0);
+    transform-origin: top left;
 }
 #password:focus + span + .password-validation {
-    transform: scale(1);
-    top: 55px;
-    left: 0;
     filter: opacity(1);
+    transform: scale(1);
 }
 
 .password-validation h4 {
@@ -271,9 +278,9 @@ input:invalid + .email-required::after {
 }
 
 .invalid {
-    color: red;
-    text-shadow: 0 0 5px white, 0 0 5px white,
-    0 0 5px white, 0 0 5px white;
+    color: #ff0000;
+    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff,
+    0 0 5px #ffffff, 0 0 5px #ffffff;
 }
   
 .invalid:before {
@@ -283,9 +290,9 @@ input:invalid + .email-required::after {
 }
 
 .valid {
-    color: green;
-    text-shadow: 0 0 5px white, 0 0 5px white,
-    0 0 5px white, 0 0 5px white;
+    color: #008000;
+    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff,
+    0 0 5px #ffffff, 0 0 5px #ffffff;
 }
   
 .valid:before {
