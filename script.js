@@ -53,7 +53,7 @@ confirmPassword.addEventListener('change', () => {
 firstName.addEventListener('focusout', () => {
     if (firstName.value === '') {
         firstName.classList.add('error');
-        firstName.setCustomValidity('What\'s your name');
+        firstName.setCustomValidity('What\'s your name?');
     } else {
         firstName.classList.remove('error');
         firstName.setCustomValidity('');
@@ -63,7 +63,7 @@ firstName.addEventListener('focusout', () => {
 lastName.addEventListener('focusout', () => {
     if (lastName.value === '') {
         lastName.classList.add('error');
-        lastName.setCustomValidity('What\'s your name');
+        lastName.setCustomValidity('What\'s your name?');
     } else {
         lastName.classList.remove('error');
         lastName.setCustomValidity('');
@@ -77,6 +77,7 @@ email.addEventListener('focusout', () => {
         spanEmail.setAttribute('invalid-email', 'You\'ll use this to log in');
     } else if (!email.value.match(/[a-zA-Z0-9]+@[a-zA-Z0-9]+/)) {
         email.classList.add('error');
+        email.setCustomValidity('Please enter a valid email');
         spanEmail.setAttribute('invalid-email', 'Please enter a valid email');
     } else {
         email.classList.remove('error');
@@ -108,11 +109,11 @@ confirmPassword.addEventListener('focusout', () => {
 submitBtn.addEventListener('click', () => {
     if (firstName.value === '') {
         firstName.classList.add('error');
-        firstName.setCustomValidity('What\'s your name');
+        firstName.setCustomValidity('What\'s your name?');
     }
     if (lastName.value === '') {
         lastName.classList.add('error');
-        lastName.setCustomValidity('What\'s your name');
+        lastName.setCustomValidity('What\'s your name?');
     }
     if (email.value === '') {
         email.classList.add('error');
