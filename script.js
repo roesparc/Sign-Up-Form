@@ -46,6 +46,7 @@ confirmPassword.addEventListener('change', () => {
         password.classList.remove('error');
         password.setCustomValidity('');
         confirmPassword.classList.remove('error');
+        confirmPassword.setCustomValidity('');
     }
 });
 
