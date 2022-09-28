@@ -76,10 +76,22 @@
                             <input type="tel" id="phone-number" placeholder="012-345-6789">
                         </div>
 
-                        <div>
+                        <div class="password-div">
                             <label for="password">PASSWORD</label>
-                            <input type="password" id="password">
-                            <span invalid-text="" class="invalid-password"></span>
+                            <input
+                            type="password"
+                            id="password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+                            <span
+                            invalid-text="Create a password"
+                            class="invalid-password"></span>
+                            <div class="password-validation">
+                                <h4>Password must contain:</h3>
+                                <p id="letter" class="invalid">A lowercase letter</p>
+                                <p id="upper" class="invalid">An uppercase letter</p>
+                                <p id="number" class="invalid">A number</p>
+                                <p id="length" class="invalid">Minimum 8 characters</p>
+                            </div>
                         </div>
 
                         <div>
@@ -95,7 +107,7 @@
 
             </form>
 
-            <p>
+            <p class="login">
                 Already have an account?
                 <a href="#">Log In</a>
             </p>
