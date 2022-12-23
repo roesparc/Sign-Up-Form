@@ -1,144 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up Form</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="background-side">
+      <img src="./img/background.jpg" alt="Background Image" />
 
-        <img src="./img/background.jpg" alt="Background Image">
+      <div class="logo-container">
+        <img src="./img/logo.png" alt="Logo" />
+        <h1>CoolForms</h1>
+      </div>
 
-        <div class="logo-container">
-            <img src="./img/logo.png" alt="Logo">
-            <h1>CoolForms</h1>
-        </div>
+      <address>
+        Photo by <a href="https://unsplash.com/@dascal">Adrian Dascal</a> on
+        <a href="https://unsplash.com/photos/AFppPIyQpH4">Unsplash</a>
+      </address>
 
-        <address>
-            Photo by <a href="https://unsplash.com/@dascal">Adrian Dascal</a>
-            on <a href="https://unsplash.com/photos/AFppPIyQpH4">Unsplash</a>
-        </address>
-
-        <div class="author">
-            By <a href="https://github.com/roesparc">roesparc</a>
-        </div>
-
+      <div class="author">
+        By <a href="https://github.com/roesparc">roesparc</a>
+      </div>
     </div>
-    
+
     <div class="form-side">
+      <p>
+        This is not a real online service! Good looking forms (like this one, of
+        course) can make a big difference in reaching potential customers.
+        <br />
+        Sign up now to get started. <br /><br />
+        It's <em>fast</em> and <em>easy</em>.
+      </p>
 
-            <p>
-                This is not a real online service!
-                Good looking forms (like this one, of course)
-                can make a big difference in reaching potential customers.
-                <br> Sign up now to get started.
-                <br><br> It's <em>fast</em> and <em>easy</em>.
-            </p>
+      <form novalidate>
+        <div>
+          <h2>Let's begin!</h2>
 
-            <form action="">
+          <div class="input-zone">
+            <div>
+              <label for="first-name"
+                >FIRST NAME
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                type="text"
+                name="first-name"
+                id="first-name"
+                placeholder="John"
+              />
+              <span class="name-required"></span>
+            </div>
 
-                <div>
+            <div>
+              <label for="last-name"
+                >LAST NAME
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                type="text"
+                name="last-name"
+                id="last-name"
+                placeholder="Smith"
+              />
+              <span class="name-required"></span>
+            </div>
 
-                    <h2>Let's begin!</h2>
+            <div>
+              <label for="email"
+                >EMAIL
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@email.com"
+              />
+              <span
+                invalid-email="You'll use this to log in"
+                class="email-required"
+              ></span>
+            </div>
 
-                    <div class="input-zone">
+            <div>
+              <label for="phone-number">PHONE NUMBER</label>
+              <input
+                type="tel"
+                name="phone-number"
+                id="phone-number"
+                placeholder="012-345-6789"
+              />
+            </div>
 
-                        <div>
-                            <label
-                                for="first-name">FIRST NAME
-                                <span class="asterisk">*</span>
-                            </label>
-                            <input
-                            type="text"
-                            name="first-name"
-                            id="first-name"
-                            placeholder="John" />
-                            <span class="name-required"></span>
-                        </div>
+            <div class="password-div">
+              <label for="password"
+                >PASSWORD
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              />
+              <span
+                invalid-password="Create a password"
+                class="invalid-password"
+              ></span>
+              <div class="password-validation">
+                <h4>Password must contain:</h4>
+                <p id="letter" class="invalid">A lowercase letter</p>
+                <p id="upper" class="invalid">An uppercase letter</p>
+                <p id="number" class="invalid">A number</p>
+                <p id="length" class="invalid">Minimum 8 characters</p>
+              </div>
+            </div>
 
-                        <div>
-                            <label
-                                for="last-name">LAST NAME
-                                <span class="asterisk">*</span>
-                            </label>
-                            <input
-                            type="text"
-                            name="last-name"
-                            id="last-name"
-                            placeholder="Smith" />
-                            <span class="name-required"></span>
-                        </div>
+            <div>
+              <label for="confirm-password"
+                >CONFIRM PASSWORD
+                <span class="asterisk">*</span>
+              </label>
+              <input
+                type="password"
+                name="confirm-password"
+                id="confirm-password"
+              />
+            </div>
+          </div>
+        </div>
 
-                        <div>
-                            <label
-                                for="email">EMAIL
-                                <span class="asterisk">*</span>
-                            </label>
-                            <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            placeholder="email@email.com" />
-                            <span
-                            invalid-email="You'll use this to log in"
-                            class="email-required"></span>
-                        </div>
+        <button>Create Account</button>
+      </form>
 
-                        <div>
-                            <label for="phone-number">PHONE NUMBER</label>
-                            <input
-                            type="tel"
-                            name="phone-number"
-                            id="phone-number"
-                            placeholder="012-345-6789" />
-                        </div>
-
-                        <div class="password-div">
-                            <label for="password">PASSWORD</label>
-                            <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
-                            <span
-                            invalid-password="Create a password"
-                            class="invalid-password"></span>
-                            <div class="password-validation">
-                                <h4>Password must contain:</h3>
-                                <p id="letter" class="invalid">A lowercase letter</p>
-                                <p id="upper" class="invalid">An uppercase letter</p>
-                                <p id="number" class="invalid">A number</p>
-                                <p id="length" class="invalid">Minimum 8 characters</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="confirm-password">CONFIRM PASSWORD</label>
-                            <input
-                            type="password"
-                            name="confirm-password"
-                            id="confirm-password" />
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <button>Create Account</button>
-
-            </form>
-
-            <p class="login">
-                Already have an account?
-                <a href="#">Log In</a>
-            </p>
-
+      <p class="login">
+        Already have an account?
+        <a href="#">Log In</a>
+      </p>
     </div>
-
-</body>
+  </body>
 </html>
