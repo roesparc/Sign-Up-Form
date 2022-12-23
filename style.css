@@ -1,315 +1,320 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Expletus+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&family=Expletus+Sans&display=swap");
 
 :root {
-    --default-font: 'Expletus Sans', sans-serif;
-    --standard-font-size: 1.2rem;
-    --small-font-size: 0.7rem;
-    --big-font-size: 1.5rem;
+  --default-font: "Expletus Sans", sans-serif;
+  --standard-font-size: 1.2rem;
+  --small-font-size: 0.7rem;
+  --big-font-size: 1.5rem;
 
-    --background-text-color: #ffffff;
-    --background-invalid: #ff000060;
-    --main-color: #596d48;
-    --main-box-shadow: 0 2px 5px #e5e7eb;
-    --main-border: 2px solid #e5e7eb;
-    --error-border: 2px solid #ff000060;
-    --form-side-padding: 20px 40px;
+  --background-text-color: #ffffff;
+  --background-invalid: #ff000060;
+  --main-color: #596d48;
+  --main-box-shadow: 0 2px 5px #e5e7eb;
+  --main-border: 2px solid #e5e7eb;
+  --error-border: 2px solid #ff000060;
+  --form-side-padding: 20px 40px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    font-family: var(--default-font);
-    background-color: #f7f7f7;
+  display: flex;
+  font-family: var(--default-font);
+  background-color: #f7f7f7;
 }
 
 .background-side {
-    position: relative;
+  position: relative;
 }
 
 .background-side > img {
-    display: block;
-    width: 40vw;
-    height: max(100vh, 100%);
-    object-fit: cover;
+  display: block;
+  width: 40vw;
+  height: max(100vh, 100%);
+  object-fit: cover;
 }
 
 address {
-    position: absolute;
-    bottom: 50px;
-    left: calc(50% - 130px);
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 130px);
 
-    font-style: normal;
-    color: var(--background-text-color);
-    text-shadow: 0 0 5px #000000, 0 0 5px #000000,
-    0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
+  font-style: normal;
+  color: var(--background-text-color);
+  text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000,
+    0 0 5px #000000, 0 0 5px #000000;
 }
 address a {
-    color: var(--background-text-color);
+  color: var(--background-text-color);
 }
 
 .author {
-    position: absolute;
-    bottom: 15px;
-    left: calc(50% - 37px);
+  position: absolute;
+  bottom: 15px;
+  left: calc(50% - 37px);
 
-    color: #c7a725;
-    text-shadow: 0 0 5px #000000, 0 0 5px #000000,
-    0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000;
+  color: #c7a725;
+  text-shadow: 0 0 5px #000000, 0 0 5px #000000, 0 0 5px #000000,
+    0 0 5px #000000, 0 0 5px #000000;
 }
 .author a {
-    color: #91b68e;
-    font-weight: bold;
+  color: #91b68e;
+  font-weight: bold;
 }
 
 .logo-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 25%;
-    width: 100%;
-    padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  padding: 10px 0;
 
-    font-family: 'Edu QLD Beginner', sans-serif;
-    color: var(--background-text-color);
-    font-size: 2.5rem;
-    text-align: center;
-    background-color: #00000080;
+  font-family: "Edu QLD Beginner", sans-serif;
+  color: var(--background-text-color);
+  font-size: 2.5rem;
+  text-align: center;
+  background-color: #00000080;
 }
 
 .logo-container img {
-    width: 120px;
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(26deg) brightness(110%) contrast(101%);
+  width: 120px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(26deg) brightness(110%)
+    contrast(101%);
 }
 
 .logo-container h1 {
-    padding: 0 10px;
+  padding: 0 10px;
 }
 
 .form-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-side p:first-child {
-    font-size: var(--big-font-size);
-    font-weight: bold;
-    padding: var(--form-side-padding);
+  font-size: var(--big-font-size);
+  font-weight: bold;
+  padding: var(--form-side-padding);
 }
 
 .login {
-    font-size: var(--standard-font-size);
+  font-size: var(--standard-font-size);
 
-    padding: var(--form-side-padding);
-    margin-top: 20px;
+  padding: var(--form-side-padding);
+  margin-top: 20px;
 }
 
 .login a {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--main-color);
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-color);
+}
+.login a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
 }
 
 form > div:first-child {
+  background-color: #ffffff;
+  box-shadow: var(--main-box-shadow);
 
-    background-color: #ffffff;
-    box-shadow: var(--main-box-shadow);
-
-    padding: var(--form-side-padding);
-    margin: 40px 0;
+  padding: var(--form-side-padding);
+  margin: 40px 0;
 }
 
 form h2 {
-    font-size: var(--big-font-size);
-    margin-bottom: 20px;
+  font-size: var(--big-font-size);
+  margin-bottom: 20px;
 }
 
 form button {
-    font-family: var(--default-font);
-    font-size: var(--standard-font-size);
-    font-weight: bold;
-    color: #ffffff;
+  font-family: var(--default-font);
+  font-size: var(--standard-font-size);
+  font-weight: bold;
+  color: #ffffff;
 
-    background-color: var(--main-color);
-    border: none;
-    border-radius: 10px;
-    box-shadow: var(--main-box-shadow);
-    
-    margin-left: 40px;
-    padding: 15px 40px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  background-color: var(--main-color);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--main-box-shadow);
+
+  margin-left: 40px;
+  padding: 15px 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 form button:hover {
-    background-color: #596d48e8;
-    box-shadow: 3px 6px 5px #e5e7eb;
+  background-color: #596d48e8;
+  box-shadow: 3px 6px 5px #e5e7eb;
 }
 form button:active {
-    background-color: #4e613e;
-    box-shadow: var(--main-box-shadow);
+  background-color: #4e613e;
+  box-shadow: var(--main-box-shadow);
 }
 
 label {
-    display: block;
+  display: block;
 
-    font-size: var(--small-font-size);
-    font-weight: bold;
-    letter-spacing: 0.1rem;
+  font-size: var(--small-font-size);
+  font-weight: bold;
+  letter-spacing: 0.1rem;
 }
 
 input {
-    font-family: var(--default-font);
-    font-size: var(--standard-font-size);
+  font-family: var(--default-font);
+  font-size: var(--standard-font-size);
 
-    padding: 5px 10px;
-    border: var(--main-border);
-    border-radius: 5px;
-    width: 300px;
-    transition: all 0.3s ease;
+  padding: 5px 10px;
+  border: var(--main-border);
+  border-radius: 5px;
+  width: 300px;
+  transition: all 0.3s ease;
 }
 input:focus {
-    outline: none;
-    box-shadow: var(--main-box-shadow);
-    border: 2px solid #006eff60;
+  outline: none;
+  box-shadow: var(--main-box-shadow);
+  border: 2px solid #006eff60;
 }
 input::placeholder {
-    color: #d3d3d3;
+  color: #d3d3d3;
 }
 
 .input-zone {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 80px;
 }
 
 .error {
-    border: var(--error-border);
+  border: var(--error-border);
 }
 .error:focus {
-    border: var(--error-border);
-    box-shadow: 0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb,
-    0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb;
+  border: var(--error-border);
+  box-shadow: 0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb, 0 2px 5px #e5e7eb,
+    0 2px 5px #e5e7eb;
 }
 
 span {
-    position: relative;
+  position: relative;
 }
 
 .invalid-password::after {
-    font-size: var(--small-font-size);
-    position: absolute;
-    content: attr(invalid-password);
-    color: #ffffff;
-    background-color: var(--background-invalid);
-    padding: 5px 10px;
-    width: max-content;
-    top: -30px;
-    right: 5px;
+  font-size: var(--small-font-size);
+  position: absolute;
+  content: attr(invalid-password);
+  color: #ffffff;
+  background-color: var(--background-invalid);
+  padding: 5px 10px;
+  width: max-content;
+  top: -30px;
+  right: 5px;
 
-    filter: opacity(0);
-    transition: all 0.3s ease;
+  filter: opacity(0);
+  transition: all 0.3s ease;
 }
 input.error + .invalid-password::after {
-    filter: opacity(1);
-    top: -35px;
+  filter: opacity(1);
+  top: -35px;
 }
 
 .asterisk {
-    color: #ff0000;
+  color: #ff0000;
 }
 
 .name-required::after {
-    font-size: var(--small-font-size);
-    position: absolute;
-    content: "What's your name?";
-    color: #ffffff;
-    background-color: var(--background-invalid);
-    padding: 5px 10px;
-    width: max-content;
-    top: -30px;
-    right: 5px;
+  font-size: var(--small-font-size);
+  position: absolute;
+  content: "What's your name?";
+  color: #ffffff;
+  background-color: var(--background-invalid);
+  padding: 5px 10px;
+  width: max-content;
+  top: -30px;
+  right: 5px;
 
-    filter: opacity(0);
-    transition: all 0.3s ease;
+  filter: opacity(0);
+  transition: all 0.3s ease;
 }
 input:invalid + .name-required::after {
-    filter: opacity(1);
-    top: -35px;
+  filter: opacity(1);
+  top: -35px;
 }
 
 .email-required::after {
-    font-size: var(--small-font-size);
-    position: absolute;
-    content: attr(invalid-email);
-    color: #ffffff;
-    background-color: var(--background-invalid);
-    padding: 5px 10px;
-    width: max-content;
-    top: -30px;
-    right: 5px;
+  font-size: var(--small-font-size);
+  position: absolute;
+  content: attr(invalid-email);
+  color: #ffffff;
+  background-color: var(--background-invalid);
+  padding: 5px 10px;
+  width: max-content;
+  top: -30px;
+  right: 5px;
 
-    filter: opacity(0);
-    transition: all 0.3s ease;
+  filter: opacity(0);
+  transition: all 0.3s ease;
 }
 input.error + .email-required::after {
-    filter: opacity(1);
-    top: -35px;
+  filter: opacity(1);
+  top: -35px;
 }
 
 .password-div {
-    position: relative;
+  position: relative;
 }
 
 .password-validation {
-    font-size: 1rem;
-    background-color: #ffffffec;
-    border-left: var(--main-border);
-    border-right: var(--main-border);
-    border-bottom: var(--main-border);
-    padding: 15px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    position: absolute;
-    transition: all 0.3s ease;
-    filter: opacity(0);
-    transform: scale(0);
-    transform-origin: top left;
+  font-size: 1rem;
+  background-color: #ffffffec;
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  border-bottom: var(--main-border);
+  padding: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: absolute;
+  transition: all 0.3s ease;
+  filter: opacity(0);
+  transform: scale(0);
+  transform-origin: top left;
+  z-index: 1;
 }
 #password:focus + span + .password-validation {
-    filter: opacity(1);
-    transform: scale(1);
+  filter: opacity(1);
+  transform: scale(1);
 }
 
 .password-validation h4 {
-    font-size: var(--standard-font-size);
+  font-size: var(--standard-font-size);
 }
 
 .invalid {
-    color: #ff0000;
-    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff,
-    0 0 5px #ffffff, 0 0 5px #ffffff;
+  color: #ff0000;
+  text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff, 0 0 5px #ffffff,
+    0 0 5px #ffffff;
 }
-  
+
 .invalid:before {
-    position: relative;
-    left: -5px;
-    content: "✖";
+  position: relative;
+  left: -5px;
+  content: "✖";
 }
 
 .valid {
-    color: #008000;
-    text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff,
-    0 0 5px #ffffff, 0 0 5px #ffffff;
+  color: #008000;
+  text-shadow: 0 0 5px #ffffff, 0 0 5px #ffffff, 0 0 5px #ffffff,
+    0 0 5px #ffffff;
 }
-  
+
 .valid:before {
-    position: relative;
-    left: -5px;
-    content: "✓";
+  position: relative;
+  left: -5px;
+  content: "✓";
 }
